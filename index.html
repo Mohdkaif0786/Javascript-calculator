@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script src="calc.js"></script>
+</head>
+<body>
+    <h1 id="text-center">calculator with html,css and javasript</h1>
+    <div class="container">
+        <div class="row">
+            <input type="text" name="" id="text">
+        </div>
+        <div class="row">
+            <button class="btn grey" type="reset">AC</button>
+            <button class="btn grey">+</button>
+            <button class="btn grey">%</i></button>
+            <button  class="btn golden">/</i></button>
+        </div>
+        <div class="row">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn golden">*</button>
+        </div>
+        <div class="row">
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn golden">-</button>
+        </div>
+        <div class="row">
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn golden">+</button>
+        </div>
+        <div class="row">
+            <button  class=" btn zero" id="zero_text">0</button>
+            <button class="btn">.</button>
+            <button class="btn golden">=</button>
+        </div>
+    </div>
+    <script>
+        let string="";
+        let input=document.getElementById("text");
+        console.log(input)
+        let btns=document.getElementsByClassName("btn");
+        let len=btns.length
+        for(i=0;i<len;i++){
+            btns[i].addEventListener("click",function(e){
+                if(e.target.innerHTML=="="){
+                   string=eval(string)
+                   input.value=string;       
+                }  
+                else if(e.target.innerHTML=="AC"){
+                    string="";
+                    input.value=string;    
+                }   
+                else{
+                    string=string+e.target.innerHTML;
+                    input.value=string;       
+                }
+            })
+        }
+       
+    </script>
+</body>
+</html>
